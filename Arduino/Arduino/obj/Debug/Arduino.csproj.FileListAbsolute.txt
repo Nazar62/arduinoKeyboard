@@ -1,0 +1,10 @@
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Arduino.exe.config
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Arduino.exe
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Arduino.pdb
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.Form1.resources
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.Properties.Resources.resources
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.GenerateResource.cache
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.CoreCompileInputs.cache
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.exe
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.pdb
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.AssemblyReference.cache
