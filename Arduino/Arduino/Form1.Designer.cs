@@ -43,6 +43,7 @@ namespace Arduino
             this.exitBtn = new System.Windows.Forms.Button();
             this.hotkey1 = new System.Windows.Forms.TextBox();
             this.COMcomboBox = new Arduino.CustomCombobox();
+            this.customFormBorder1 = new Arduino.CustomFormBorder();
             this.border.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,12 +188,21 @@ namespace Arduino
             this.COMcomboBox.TabIndex = 8;
             this.COMcomboBox.Texts = "";
             // 
+            // customFormBorder1
+            // 
+            this.customFormBorder1.FormName = "Form1";
+            this.customFormBorder1.Location = new System.Drawing.Point(156, 139);
+            this.customFormBorder1.Name = "customFormBorder1";
+            this.customFormBorder1.Size = new System.Drawing.Size(150, 32);
+            this.customFormBorder1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(407, 177);
+            this.Controls.Add(this.customFormBorder1);
             this.Controls.Add(this.COMcomboBox);
             this.Controls.Add(this.hotkey1);
             this.Controls.Add(this.border);
@@ -229,6 +239,7 @@ namespace Arduino
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.TextBox hotkey1;
         private CustomCombobox COMcomboBox;
+        private CustomFormBorder customFormBorder1;
     }
 }
 
