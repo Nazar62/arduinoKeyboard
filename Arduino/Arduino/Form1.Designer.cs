@@ -38,13 +38,9 @@ namespace Arduino
             this.UnconnectBtn = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.Test = new System.Windows.Forms.Button();
-            this.border = new System.Windows.Forms.Panel();
-            this.minimizeBtn = new System.Windows.Forms.Button();
-            this.exitBtn = new System.Windows.Forms.Button();
             this.hotkey1 = new System.Windows.Forms.TextBox();
             this.COMcomboBox = new Arduino.CustomCombobox();
             this.customFormBorder1 = new Arduino.CustomFormBorder();
-            this.border.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPorts
@@ -122,45 +118,6 @@ namespace Arduino
             this.Test.UseVisualStyleBackColor = false;
             this.Test.Click += new System.EventHandler(this.Test_Click);
             // 
-            // border
-            // 
-            this.border.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.border.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.border.Controls.Add(this.minimizeBtn);
-            this.border.Controls.Add(this.exitBtn);
-            this.border.Dock = System.Windows.Forms.DockStyle.Top;
-            this.border.Location = new System.Drawing.Point(0, 0);
-            this.border.Name = "border";
-            this.border.Size = new System.Drawing.Size(407, 25);
-            this.border.TabIndex = 6;
-            this.border.MouseDown += new System.Windows.Forms.MouseEventHandler(this.border_MouseDown);
-            // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.FlatAppearance.BorderSize = 0;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(339, -1);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(35, 25);
-            this.minimizeBtn.TabIndex = 1;
-            this.minimizeBtn.UseVisualStyleBackColor = true;
-            this.minimizeBtn.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.FlatAppearance.BorderSize = 0;
-            this.exitBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(33)))), ((int)(((byte)(44)))));
-            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
-            this.exitBtn.Location = new System.Drawing.Point(371, -1);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(35, 25);
-            this.exitBtn.TabIndex = 0;
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
             // hotkey1
             // 
             this.hotkey1.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -190,10 +147,16 @@ namespace Arduino
             // 
             // customFormBorder1
             // 
+            this.customFormBorder1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customFormBorder1.ButtonCollor = System.Drawing.Color.DimGray;
             this.customFormBorder1.FormName = "Form1";
-            this.customFormBorder1.Location = new System.Drawing.Point(156, 139);
+            this.customFormBorder1.IconColor = System.Drawing.SystemColors.Control;
+            this.customFormBorder1.IconSize = 5;
+            this.customFormBorder1.Location = new System.Drawing.Point(0, 0);
             this.customFormBorder1.Name = "customFormBorder1";
-            this.customFormBorder1.Size = new System.Drawing.Size(150, 32);
+            this.customFormBorder1.PanelColor = System.Drawing.Color.DimGray;
+            this.customFormBorder1.Size = new System.Drawing.Size(407, 32);
             this.customFormBorder1.TabIndex = 9;
             // 
             // Form1
@@ -205,7 +168,6 @@ namespace Arduino
             this.Controls.Add(this.customFormBorder1);
             this.Controls.Add(this.COMcomboBox);
             this.Controls.Add(this.hotkey1);
-            this.Controls.Add(this.border);
             this.Controls.Add(this.Test);
             this.Controls.Add(this.UnconnectBtn);
             this.Controls.Add(this.recievedText);
@@ -219,7 +181,6 @@ namespace Arduino
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.border.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,9 +195,6 @@ namespace Arduino
         private System.Windows.Forms.Button UnconnectBtn;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button Test;
-        private System.Windows.Forms.Panel border;
-        private System.Windows.Forms.Button minimizeBtn;
-        private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.TextBox hotkey1;
         private CustomCombobox COMcomboBox;
         private CustomFormBorder customFormBorder1;
