@@ -41,6 +41,11 @@ namespace Arduino
             this.hotkey1 = new System.Windows.Forms.TextBox();
             this.COMcomboBox = new Arduino.CustomCombobox();
             this.customFormBorder1 = new Arduino.CustomFormBorder();
+            this.label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.hotkey2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.hotkey3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // serialPorts
@@ -79,7 +84,7 @@ namespace Arduino
             // recievedText
             // 
             this.recievedText.AutoSize = true;
-            this.recievedText.Location = new System.Drawing.Point(10, 38);
+            this.recievedText.Location = new System.Drawing.Point(195, 69);
             this.recievedText.Name = "recievedText";
             this.recievedText.Size = new System.Drawing.Size(90, 13);
             this.recievedText.TabIndex = 3;
@@ -122,10 +127,11 @@ namespace Arduino
             // 
             this.hotkey1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hotkey1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hotkey1.Location = new System.Drawing.Point(13, 67);
+            this.hotkey1.Location = new System.Drawing.Point(12, 48);
             this.hotkey1.Name = "hotkey1";
             this.hotkey1.Size = new System.Drawing.Size(131, 20);
             this.hotkey1.TabIndex = 7;
+            this.hotkey1.TextChanged += new System.EventHandler(this.hotkey1_TextChanged);
             // 
             // COMcomboBox
             // 
@@ -159,12 +165,62 @@ namespace Arduino
             this.customFormBorder1.Size = new System.Drawing.Size(407, 32);
             this.customFormBorder1.TabIndex = 9;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(12, 32);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(53, 13);
+            this.label.TabIndex = 10;
+            this.label.Text = "Hot key 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Hot key 2";
+            // 
+            // hotkey2
+            // 
+            this.hotkey2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hotkey2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hotkey2.Location = new System.Drawing.Point(12, 87);
+            this.hotkey2.Name = "hotkey2";
+            this.hotkey2.Size = new System.Drawing.Size(131, 20);
+            this.hotkey2.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Hot key 3";
+            // 
+            // hotkey3
+            // 
+            this.hotkey3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hotkey3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hotkey3.Location = new System.Drawing.Point(12, 126);
+            this.hotkey3.Name = "hotkey3";
+            this.hotkey3.Size = new System.Drawing.Size(131, 20);
+            this.hotkey3.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(407, 177);
+            this.Controls.Add(this.hotkey3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.hotkey2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.customFormBorder1);
             this.Controls.Add(this.COMcomboBox);
             this.Controls.Add(this.hotkey1);
@@ -198,6 +254,11 @@ namespace Arduino
         private System.Windows.Forms.TextBox hotkey1;
         private CustomCombobox COMcomboBox;
         private CustomFormBorder customFormBorder1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox hotkey2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox hotkey3;
     }
 }
 

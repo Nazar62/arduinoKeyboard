@@ -153,5 +153,10 @@ namespace Arduino
         {
 
         }
+
+        private void hotkey1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,11 +11,10 @@ using System.Windows.Forms;
 
 namespace Arduino
 {
-    public partial class CustomFormBorder : UserControl
+    public partial class CustomFormBorderMini : UserControl
     {
         Button exit;
         Button minimize;
-        Button maximize;
         Panel buttonPanel;
         Panel panel;
         int startX;
@@ -50,7 +49,6 @@ namespace Arduino
                 buttonCollor = value;
                 exit.BackColor = buttonCollor;
                 minimize.BackColor = buttonCollor;
-                maximize.BackColor = buttonCollor;
             } }
         [Category("Custom")]
         public int IconSize { 
@@ -59,7 +57,6 @@ namespace Arduino
                 iconSize = value;
                 exit.Invalidate();
                 minimize.Invalidate();
-                maximize.Invalidate();
             } }
         [Category("Custom")]
         public Color IconColor { 
@@ -68,7 +65,6 @@ namespace Arduino
                 iconColor = value;
                 exit.Invalidate();
                 minimize.Invalidate();
-                maximize.Invalidate();
             }
         }
 
@@ -78,7 +74,7 @@ namespace Arduino
         private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
 
         private FormWindowState WindowState;
-        public CustomFormBorder()
+        public CustomFormBorderMini()
         {
             //InitializeComponent();
 
@@ -91,8 +87,6 @@ namespace Arduino
             //this.MaximumSize = new Size(this.ClientSize.Width, 32);
             minimize.Click += Minimize_Click;
             minimize.Paint += Minimize_Paint;
-            maximize.Click += Maximize_Click;
-            maximize.Paint += Maximize_Paint;
             exit.Click += ExitBtn_Click;
             exit.Paint += Exit_Paint;
         }
@@ -105,13 +99,7 @@ namespace Arduino
             g.DrawLine(pen, (exit.Width / 2) - iconSize, (exit.Height / 2) + iconSize, (exit.Width / 2) + iconSize, (exit.Height / 2) - iconSize);
         }
 
-        private void Maximize_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Pen pen = new Pen(iconColor);
-            g.DrawRectangle(pen, maximize.Width / 2 - iconSize, maximize.Height / 2 - iconSize, (maximize.Width / 8) + iconSize, (maximize.Height / 8) + iconSize);
-            
-        }
+       
 
         private void Minimize_Paint(object sender, PaintEventArgs e)
         {
@@ -137,7 +125,7 @@ namespace Arduino
             int buttonHeight = 32;
 
             // Calculate the total width required for the buttons
-            buttonsWidth = (buttonWidth * 3);
+            buttonsWidth = (buttonWidth * 2);
 
             // Calculate the starting X position for the buttons
             startX = this.ClientSize.Width - buttonsWidth;
@@ -153,23 +141,15 @@ namespace Arduino
             minimize.BackColor = Color.DimGray;
             minimize.FlatStyle = FlatStyle.Flat;
             minimize.FlatAppearance.BorderSize = 0;
-            minimize.Location = new Point(startX, 0);
+            minimize.Location = new Point(0, 0);
             buttonPanel.Controls.Add(minimize);
-
-                maximize = new Button();
-                maximize.Size = new Size(46, 32);
-                maximize.BackColor = Color.DimGray;
-                maximize.FlatStyle = FlatStyle.Flat;
-                maximize.FlatAppearance.BorderSize = 0;
-                maximize.Location = new Point(minimize.Right, 0);//(this.ClientSize.Height - buttonHeight) / 2);
-                buttonPanel.Controls.Add(maximize);
 
             exit = new Button();
             exit.BackColor = Color.DimGray;
             exit.Size = new Size(46, 32);
             exit.FlatStyle = FlatStyle.Flat;
             exit.FlatAppearance.BorderSize = 0;
-            exit.Location = new Point(maximize.Right, 0);
+            exit.Location = new Point(minimize.Right, 0);
             exit.FlatAppearance.MouseDownBackColor = Color.DarkRed;
             exit.FlatAppearance.MouseOverBackColor = Color.Red;
             buttonPanel.Controls.Add(exit);
@@ -188,10 +168,8 @@ namespace Arduino
             panel.Width = this.ClientSize.Width;
             buttonPanel.Location = new Point(startX -15, 0);
             exit.Height = this.ClientSize.Height;
-            maximize.Height = this.ClientSize.Height;
             minimize.Height = this.ClientSize.Height;
             exit.Invalidate();
-            maximize.Invalidate();
             minimize.Invalidate();
         }
 
