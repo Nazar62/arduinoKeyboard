@@ -16,6 +16,7 @@ namespace Arduino
     public partial class Form1 : Form
     {
         string recievedData = "";
+        Settings settings;
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +52,10 @@ namespace Arduino
                     MessageBox.Show("Connection Error");
                 }
             ConnectBtn.Enabled = false;
+            hotkey1.Enabled = false;
+            hotkey2.Enabled = false;
+            hotkey3.Enabled = false;
+            SaveBtn.Enabled = false;
             COMcomboBox.Enabled = false;
             UnconnectBtn.Enabled = true;
             timer.Start();
@@ -69,45 +74,53 @@ namespace Arduino
             ConnectBtn.Enabled = true;
             COMcomboBox.Enabled = true;
             UnconnectBtn.Enabled = false;
+            hotkey1.Enabled = true;
+            hotkey2.Enabled = true;
+            hotkey3.Enabled = true;
+            SaveBtn.Enabled = true;
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             if (data.Contains("1"))
             {
+                SettingsManager.GetSettings();
                 data = "";
-                sendMicrophone();
+                send1(settings.hotkeys1);
             }
             if (data.Contains("2"))
             {
+                settings = SettingsManager.GetSettings();
                 data = "";
-                sendHand();
+                send2(settings.hotkeys2);
             }
             if (data.Contains("3"))
             {
+                SettingsManager.GetSettings();
                 data = "";
-                sendCam();
+                send3(settings.hotkeys3);
             }
         }
 
         private void Test_Click(object sender, EventArgs e)
         {
+            SettingsManager.GetSettings();
             //Thread.Sleep(1000);
             //SendKeys.Send("^d");
             Thread.Sleep(1000);
-            sendHand();
+            send3(settings.hotkeys3);
         }
-        private void sendMicrophone()
+        private void send1(string hotkey)
         {
-            SendKeys.Send("^d");
+            SendKeys.Send(hotkey);
         }
-        private void sendHand()
+        private void send2(string hotkey)
         {
-            SendKeys.Send("^%h");
+            SendKeys.Send(hotkey);
         }
-        private void sendCam()
+        private void send3(string hotkey)
         {
-            SendKeys.Send("^e");
+            SendKeys.Send(hotkey);
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -131,6 +144,10 @@ namespace Arduino
                 ConnectBtn.Enabled = true;
                 COMcomboBox.Enabled = true;
             }
+            settings = SettingsManager.GetSettings();
+            hotkey1.Text = settings.hotkeys1;
+            hotkey2.Text = settings.hotkeys2;
+            hotkey3.Text = settings.hotkeys3;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -156,7 +173,29 @@ namespace Arduino
 
         private void hotkey1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void hotkey2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hotkey3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            settings = new Settings
+            {
+                hotkeys1 = hotkey1.Text,
+                hotkeys2 = hotkey2.Text,
+                hotkeys3 = hotkey3.Text
+            };
+            SettingsManager.SaveSettings(settings);
+            MessageBox.Show("Saved");
         }
     }
 }

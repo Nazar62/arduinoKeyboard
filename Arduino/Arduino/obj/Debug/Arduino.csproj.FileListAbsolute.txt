@@ -8,3 +8,14 @@ D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.CoreCo
 D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.exe
 D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.pdb
 D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.AssemblyReference.cache
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.exe.config
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Newtonsoft.Json.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Text.Json.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Memory.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Text.Encodings.Web.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Numerics.Vectors.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\System.Buffers.dll
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\bin\Debug\Newtonsoft.Json.xml
+D:\arduinoProjects\keyboardForPc\Arduino\Arduino\obj\Debug\Arduino.csproj.CopyComplete

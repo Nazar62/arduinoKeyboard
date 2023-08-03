@@ -40,12 +40,13 @@ namespace Arduino
             this.Test = new System.Windows.Forms.Button();
             this.hotkey1 = new System.Windows.Forms.TextBox();
             this.COMcomboBox = new Arduino.CustomCombobox();
-            this.customFormBorder1 = new Arduino.CustomFormBorder();
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.hotkey2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.hotkey3 = new System.Windows.Forms.TextBox();
+            this.customFormBorderMini1 = new Arduino.CustomFormBorderMini();
+            this.SaveBtn = new Arduino.CustomButton();
             this.SuspendLayout();
             // 
             // serialPorts
@@ -151,20 +152,6 @@ namespace Arduino
             this.COMcomboBox.TabIndex = 8;
             this.COMcomboBox.Texts = "";
             // 
-            // customFormBorder1
-            // 
-            this.customFormBorder1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customFormBorder1.ButtonCollor = System.Drawing.Color.DimGray;
-            this.customFormBorder1.FormName = "Form1";
-            this.customFormBorder1.IconColor = System.Drawing.SystemColors.Control;
-            this.customFormBorder1.IconSize = 5;
-            this.customFormBorder1.Location = new System.Drawing.Point(0, 0);
-            this.customFormBorder1.Name = "customFormBorder1";
-            this.customFormBorder1.PanelColor = System.Drawing.Color.DimGray;
-            this.customFormBorder1.Size = new System.Drawing.Size(407, 32);
-            this.customFormBorder1.TabIndex = 9;
-            // 
             // label
             // 
             this.label.AutoSize = true;
@@ -191,6 +178,7 @@ namespace Arduino
             this.hotkey2.Name = "hotkey2";
             this.hotkey2.Size = new System.Drawing.Size(131, 20);
             this.hotkey2.TabIndex = 12;
+            this.hotkey2.TextChanged += new System.EventHandler(this.hotkey2_TextChanged);
             // 
             // label2
             // 
@@ -209,6 +197,40 @@ namespace Arduino
             this.hotkey3.Name = "hotkey3";
             this.hotkey3.Size = new System.Drawing.Size(131, 20);
             this.hotkey3.TabIndex = 14;
+            this.hotkey3.TextChanged += new System.EventHandler(this.hotkey3_TextChanged);
+            // 
+            // customFormBorderMini1
+            // 
+            this.customFormBorderMini1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customFormBorderMini1.ButtonCollor = System.Drawing.Color.DimGray;
+            this.customFormBorderMini1.FormName = "Form1";
+            this.customFormBorderMini1.IconColor = System.Drawing.Color.Black;
+            this.customFormBorderMini1.IconSize = 5;
+            this.customFormBorderMini1.Location = new System.Drawing.Point(0, 0);
+            this.customFormBorderMini1.Name = "customFormBorderMini1";
+            this.customFormBorderMini1.PanelColor = System.Drawing.Color.DimGray;
+            this.customFormBorderMini1.Size = new System.Drawing.Size(407, 32);
+            this.customFormBorderMini1.TabIndex = 15;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.SaveBtn.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.SaveBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.SaveBtn.BorderRadius = 10;
+            this.SaveBtn.BorderSize = 0;
+            this.SaveBtn.FlatAppearance.BorderSize = 0;
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(24, 152);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(79, 22);
+            this.SaveBtn.TabIndex = 16;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.TextColor = System.Drawing.Color.White;
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // Form1
             // 
@@ -216,12 +238,13 @@ namespace Arduino
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(407, 177);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.customFormBorderMini1);
             this.Controls.Add(this.hotkey3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.hotkey2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.customFormBorder1);
             this.Controls.Add(this.COMcomboBox);
             this.Controls.Add(this.hotkey1);
             this.Controls.Add(this.Test);
@@ -253,12 +276,13 @@ namespace Arduino
         private System.Windows.Forms.Button Test;
         private System.Windows.Forms.TextBox hotkey1;
         private CustomCombobox COMcomboBox;
-        private CustomFormBorder customFormBorder1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox hotkey2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox hotkey3;
+        private CustomFormBorderMini customFormBorderMini1;
+        private CustomButton SaveBtn;
     }
 }
 
